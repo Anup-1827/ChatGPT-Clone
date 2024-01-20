@@ -1,7 +1,7 @@
 import React from 'react'
-import XMark from '../ui/XMark'
-import ChatGPTLogo from '../ui/ChatGPTLogo'
-import PencilSquare from '../ui/PencilSquare'
+import XMark from './svg/XMark'
+import ChatGPTLogo from './svg/ChatGPTLogo'
+import PencilSquare from './svg/PencilSquare'
 
 function Sidebar() {
   return (

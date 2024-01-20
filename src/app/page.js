@@ -1,8 +1,8 @@
-import Header from "@/app/components/Header";
+import Header from "@/app/ui/Header";
 import Image from "next/image";
-import ChatGPTLogo from "./ui/ChatGPTLogo";
-import UpArrow from "./ui/UpArrow";
-import SuggestedSearches from "./components/SuggestedSearches";
+import ChatGPTLogo from "./ui/svg/ChatGPTLogo";
+import UpArrow from "./ui/svg/UpArrow";
+import SuggestedSearches from "./ui/SuggestedSearches";
 
 export default function Home() {
   return (
