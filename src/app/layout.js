@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`relative ${inter.className}`}>
-        <div className="absolute h-screen w-screen z-10 hidden md:block"><Sidebar/></div>
+        <div className="absolute h-screen w-screen z-10 hidden"><Sidebar/></div>
 
         <div>{children}</div>
       </body>

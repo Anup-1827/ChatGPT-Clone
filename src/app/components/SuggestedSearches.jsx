@@ -2,7 +2,7 @@ import React from 'react'
 
 function SuggestedSearches() {
   return (
-    <div className='flex flex-wrap gap-4 px-4 my-3'>
+    <div className='flex flex-wrap justify-center gap-4 px-4 md:px-0 my-3'>
         <div className='infoText'>
             <div className='font-bold text-xs'>Plan a trip</div>
             <p className='text-mainColor text-xs'>to see the northern lights in Norway</p>

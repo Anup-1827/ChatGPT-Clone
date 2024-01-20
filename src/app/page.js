@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-      <div className="h-full">
+      <div className="h-full max-w-[700px] mx-auto">
         <div className="center-element flex-col h-full">
           <div className="h-16 w-16 center-element border border-solid border-mainColor rounded-full mb-3">
             <ChatGPTLogo />
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="text-xl font-bold">How can I help you today?</div>
         </div>
       </div>
-      <div>
+      <div className=" max-w-[700px] mx-auto">
         <SuggestedSearches />
         <div className="h-10 mb-3 w-full px-2 relative">
           <input
