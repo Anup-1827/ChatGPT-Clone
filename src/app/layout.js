@@ -3,7 +3,8 @@ import "./globals.css";
 import Sidebar from "./ui/Sidebar";
 import SessionProvider from "./components/SessionProvider";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[nextauth]";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Login from "./ui/Login";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ export default async function RootLayout({ children }) {
           {
             !session?
             <>
-              <div>Hello</div>
+              <Login/>
             </>
             :
             <>
