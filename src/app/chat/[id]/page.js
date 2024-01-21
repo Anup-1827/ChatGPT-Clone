@@ -1,9 +1,19 @@
-import React from 'react'
+import ChatTextbox from "@/app/components/ChatTextbox";
+import Header from "@/app/components/Header";
+import Chat from "@/app/components/Chat";
+import React from "react";
 
-function Chat() {
+function ChatPage(props) {
+  const {params} = props;
   return (
-    <div>Chat</div>
-  )
+    <div className="w-full h-screen overflow-hidden flex flex-col">
+      <Header />
+      <div className="w-full h-full pb-3 flex flex-col justify-end max-w-[700px] mx-auto">
+        <Chat chatId={params.id} />
+        <ChatTextbox chatId={params.id}/>
+      </div>
+    </div>
+  );
 }
 
-export default Chat
+export default ChatPage;
