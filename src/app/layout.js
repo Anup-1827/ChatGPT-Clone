@@ -14,24 +14,25 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions);
+
+  console.log(session);
   return (
     <html lang="en">
       <body className={`relative ${inter.className}`}>
         <SessionProvider session={session}>
-          {
-            !session?
+          {!session ? (
             <>
-              <Login/>
+              <Login />
             </>
-            :
+          ) : (
             <>
-              <div className="absolute h-screen w-screen z-10 hidden"><Sidebar/></div>
+              <div className="absolute h-screen w-screen z-10">
+                <Sidebar />
+              </div>
               <div>{children}</div>
             </>
-          }
-        
+          )}
         </SessionProvider>
       </body>
     </html>

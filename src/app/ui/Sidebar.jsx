@@ -1,9 +1,15 @@
+'use client'
+
 import React from 'react'
 import XMark from './svg/XMark'
 import ChatGPTLogo from './svg/ChatGPTLogo'
 import PencilSquare from './svg/PencilSquare'
+import { useSession } from 'next-auth/react'
+import NewChat from '../components/NewChat'
 
 function Sidebar() {
+    const {data: session} = useSession()
+
   return (
     <div className='flex w-full h-full text-white'>
     <div className='w-[400px] flex flex-col justify-between h-full bg-black pt-3 pl-3 pr-4'>
@@ -17,20 +23,22 @@ function Sidebar() {
                 </span>
             </div>
 
-            <div>
-                <PencilSquare/>
-            </div>
+            <NewChat/>
         </div>
 
 
         <div className=' h-full w-full bg-white my-4'>
 
         </div>
-
-        <div className='w-full h-10 mb-4 flex items-center gap-3'>
-            <div className=' w-10 h-10 center-element border-2 border-solid rounded-full text-lg font-bold'>A</div>
-            <div className='font-bold text-xs'>Anup Alone</div>
+        {
+            session?.user?
+            <div className='w-full h-8 mb-4 flex items-center gap-3 pl-3 cursor-pointer'>
+            <img src={session.user.image}  className=' w-8 h-8 rounded-full'/>
+            <div className='font-bold text-xs'>{session.user.name}</div>
         </div>
+        :""
+        }
+        
     </div>
     <div className='bg-black opacity-15 w-full pt-3 pl-3'>
         <button  className='text-white border-2 border-solid border-white font-bold cursor-pointer'>
