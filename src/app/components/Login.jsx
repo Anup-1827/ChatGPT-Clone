@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ChatGPTLogo from "./svg/ChatGPTLogo";
+import ChatGPTLogo from "../ui/svg/ChatGPTLogo";
 import { signIn } from "next-auth/react";
 
 function Login() {

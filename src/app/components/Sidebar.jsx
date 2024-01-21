@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import XMark from "./svg/XMark";
-import ChatGPTLogo from "./svg/ChatGPTLogo";
+import XMark from "../ui/svg/XMark";
+import ChatGPTLogo from "../ui/svg/ChatGPTLogo";
 import { useSession } from "next-auth/react";
-import NewChat from "../components/NewChat";
+import NewChat from "./NewChat";
 import {useCollection} from "react-firebase-hooks/firestore"
 import { collection, orderBy, query } from "firebase/firestore";
 import { db } from "../../../firebase";
-import ChatRow from "../components/ChatRow";
+import ChatRow from "./ChatRow";
 
 function Sidebar() {
   const { data: session } = useSession();

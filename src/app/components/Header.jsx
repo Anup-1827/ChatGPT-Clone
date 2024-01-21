@@ -1,7 +1,7 @@
 import BottomThreeBars from '@/app/ui/svg/BottomThreeBars'
 import React from 'react'
-import PencilSquare from './svg/PencilSquare'
-import ChatGPTLogo from './svg/ChatGPTLogo'
+import PencilSquare from '../ui/svg/PencilSquare'
+import ChatGPTLogo from '../ui/svg/ChatGPTLogo'
 
 function Header() {
   return (
