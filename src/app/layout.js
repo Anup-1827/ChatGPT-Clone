@@ -1,10 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "./ui/Sidebar";
+import Sidebar from "./components/Sidebar";
 import SessionProvider from "./components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import Login from "./ui/Login";
+import Login from "./components/Login";
 
 const inter = Inter({ subsets: ["latin"] });
 
