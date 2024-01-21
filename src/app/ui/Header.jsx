@@ -13,7 +13,7 @@ function Header() {
     </div>
 
     <div className='hidden h-10 w-full gap-4  md:flex justify-start items-center my-2 px-4'>
-      <div className='border h-10 w-10 scale-[0.8] border-solid border-mainColor rounded-lg center-element cursor-pointer'>
+      <div className='md:hidden border h-10 w-10 scale-[0.8] border-solid border-mainColor rounded-lg center-element cursor-pointer'>
         <PencilSquare/>
       </div>
       <div> <span className='font-bold'>ChatGPT</span> <span className='text-mainColor'>3.5</span></div>

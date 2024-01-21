@@ -2,16 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
   --mainColor: #d9d9d9;
 }
 
-@layer components{
-   .center-element {
+@layer components {
+  .center-element {
     @apply flex justify-center items-center;
-   }
+  }
 
-   .infoText{
-    @apply border border-solid border-black w-[300px] p-2 rounded-lg cursor-pointer
-   }
+  .infoText {
+    @apply flex-1 basis-2/4 border border-solid border-black max-w-[300px] p-2 rounded-lg cursor-pointer;
+  }
+
+  .hideScrollBar::-webkit-scrollbar {
+    width: 5px;
+    color: white;
+  }
+
+  /* .hideScrollBar::-webkit-scrollbar-button {
+    background: blue;
+  } */
+  .hideScrollBar::-webkit-scrollbar-track-piece {
+    background: black;
+    /* border:  1px solid black; */
+    border-radius: 10px;
+  }
+  .hideScrollBar::-webkit-scrollbar-thumb {
+    /* border:  1px solid grey; */
+    border-radius: 10px;
+    background: rgb(31, 31, 31);
+  }
 }

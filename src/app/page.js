@@ -5,6 +5,7 @@ import UpArrow from "./ui/svg/UpArrow";
 import SuggestedSearches from "./ui/SuggestedSearches";
 
 export default function Home() {
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />

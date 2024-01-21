@@ -17,8 +17,7 @@ function NewChat() {
         createdAt: serverTimestamp(),
       }
     );
-      console.log("DocId ", doc.id);
-    router.push(`/chats/${doc.id}`);
+    router.push(`/chat/${doc.id}`);
   };
   
   return (
