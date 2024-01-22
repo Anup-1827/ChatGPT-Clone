@@ -29,13 +29,6 @@ async function askQuestion(req , res) {
         }
     }
 
-    // await adminDb.collection("users")
-    // .doc(session?.user.email)
-    // .collection('chats')
-    // .doc(chatId)
-    // .collection("messages")
-    // .doc(message)
-
     adminDb.collection("users").doc(session?.user?.email).collection("chats").doc(chatId).collection("messages").add(message)
 
     res.status(200).json({answer: message.text})
