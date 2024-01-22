@@ -21,11 +21,8 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className}`}>
         <SessionProvider session={session}>
-          {!session ? (
-            <>
-              <Login />
-            </>
-          ) : (
+          {!session ? 
+          <Login /> : 
             <div className="flex">
               <div className="h-screen z-10 hidden md:block">
                 <Sidebar />
@@ -33,7 +30,7 @@ export default async function RootLayout({ children }) {
               <ClientProvider/>
               <div className="flex-1">{children}</div>
             </div>
-          )}
+          }
         </SessionProvider>
       </body>
     </html>

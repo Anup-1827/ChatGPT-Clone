@@ -11,6 +11,8 @@ function ChatTextbox({chatId}) {
 
   const [promt, setPromt] = useState("");
 
+  const model = "gpt-3.5-turbo-instruct" // Fetched through SWR
+
   const handleSearching = async(e)=>{
     if(promt === ""){
       return;
@@ -37,11 +39,27 @@ function ChatTextbox({chatId}) {
     // Toast Notification
     const notification = toast.loading("ChatGPT is thinking....")
 
-    setTimeout(()=>{
+
+    await fetch('/api/askQuestion', {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        promt : input, chatId, model, session
+      })
+    })
+    .then(res=>{
       toast.success("ChatGPT responded!!!",
       {
         id:notification
       })
+    })
+    .catch(err=>{})
+
+
+    setTimeout(()=>{
+      
     },3000)
   }
 
