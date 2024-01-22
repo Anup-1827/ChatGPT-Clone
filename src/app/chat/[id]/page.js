@@ -8,7 +8,7 @@ function ChatPage(props) {
   return (
     <div className="w-full h-screen overflow-hidden flex flex-col">
       <Header />
-      <div className="w-full h-full pb-3 flex flex-col justify-end max-w-[700px] mx-auto">
+      <div className="w-full h-[90%] pb-3 flex flex-col  justify-between max-w-[700px] mx-auto">
         <Chat chatId={params.id} />
         <ChatTextbox chatId={params.id}/>
       </div>
