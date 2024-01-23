@@ -5,6 +5,9 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebase';
 async function askQuestion(req , res) {
 
+    try{
+
+
     const {promt, chatId, model, session} = req.body;
 
     console.log(model);
@@ -47,6 +50,10 @@ async function askQuestion(req , res) {
     )   
 
     res.status(200).json({answer: message.text})
+    }
+    catch(err){
+        console.log(err);
+    }
 }
 
 export default askQuestion
