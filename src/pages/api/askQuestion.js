@@ -1,6 +1,8 @@
 import queryAPI from '@/lib/queryAPI';
 import admin from 'firebase-admin';
 import adminDb from '../../../firebaseAdmin';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 async function askQuestion(req , res) {
 
     const {promt, chatId, model, session} = req.body;
@@ -22,14 +24,27 @@ async function askQuestion(req , res) {
 
     const message = {
         text: response,
-        createdAt : admin.firestore.Timestamp.now(),
+        // createdAt : admin.firestore.Timestamp.now(),
+        createdAt : serverTimestamp(),
         user:{
             _id: "ChatGPT",
             name: "ChatGPT",
         }
     }
 
-    adminDb.collection("users").doc(session?.user?.email).collection("chats").doc(chatId).collection("messages").add(message)
+    // adminDb.collection("users").doc(session?.user?.email).collection("chats").doc(chatId).collection("messages").add(message)
+    // await addDoc(
+    //     collection(db, "users", session?.user.email, "chats"),
+    //     {
+    //       userId: session?.user.email,
+    //       createdAt: serverTimestamp(),
+    //     }
+    //   );
+
+    await addDoc(
+        collection(db, "users", session?.user?.email, "chats", chatId, "messages"),
+        message
+    )   
 
     res.status(200).json({answer: message.text})
 }
