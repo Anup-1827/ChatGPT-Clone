@@ -8,9 +8,9 @@ export const authOptions = {
       clientId: process.env.Google_Client_Id,
       clientSecret: process.env.Google_Secret_Key,
     }),
-    
     // ...add more providers here
   ],
+  secret: process.env.NEXTAUTH_SECRET
 }
 
 export default NextAuth(authOptions)
